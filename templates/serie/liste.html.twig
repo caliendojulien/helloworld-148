@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+{% endblock %}
+
+{% block body %}
+    <h1>Toutes les series</h1>
+    {% for serie in series %}
+        <div>
+            <a href="{{ path('serie_detail', {'serie': serie.id}) }}">
+                {{ serie.titre }} - {{ serie.saisons | length }} saison(s).
+            </a>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+
+

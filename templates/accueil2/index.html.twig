@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+ {% block body1 %}
+     {# Les CDA #}
+     <h1>CDA 093</h1>
+     <!-- Les D2WM -->
+     <h2>D2WM 148</h2>
+     {% set couleurs = ["red", "white", "blue", "orange"] %}
+     {% for couleur in couleurs %}
+         <div style="background-color: {{ couleur }}">
+             {{ couleur | upper }}
+         </div>
+     {% endfor %}
+     <div>
+         <p>{{ nombre }}</p>
+     </div>
+     {% if hasard < 0.5 %}
+         <p>Perdu</p>
+     {% else %}
+         <p>Gagné</p>
+     {% endif %}
+     <div>
+         {{ titre }}
+     </div>
+ {% endblock %}
+
+ {% block body2 %}
+     {% include '_eni.html.twig' %}
+ {% endblock %}

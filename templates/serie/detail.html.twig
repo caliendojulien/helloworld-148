@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>Serie</h2>
+    <p>{{ serie.titre }}</p>
+    <img src="{{ asset('img/'~serie.image) }}" alt="{{ serie.titre }}">
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+
