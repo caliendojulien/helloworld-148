@@ -19,7 +19,7 @@ class SerieController extends AbstractController
         SerieRepository $serieRepository
     ): Response
     {
-        $series = $serieRepository->findAll();
+        $series = $serieRepository->findAllTuning();
         return $this->render(
             'serie/liste.html.twig',
             compact('series')
@@ -55,12 +55,6 @@ class SerieController extends AbstractController
             ]
         );
     }
-
-
-
-
-
-
 
     #[Route(
         '/serie/{serie}',

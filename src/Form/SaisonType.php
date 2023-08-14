@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Acteur;
 use App\Entity\Saison;
 use App\Entity\Serie;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -22,7 +23,10 @@ class SaisonType extends AbstractType
                 'class' => Serie::class,
                 'choice_label' => 'titre'
             ])
-//            ->add('acteurs')
+            ->add('acteurs', EntityType::class, [
+                'class' => Acteur::class,
+                'multiple' => true
+            ])
             ->add('ajouter', SubmitType::class)
         ;
     }

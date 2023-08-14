@@ -8,7 +8,7 @@
     {% for serie in series %}
         <div>
             <a href="{{ path('serie_detail', {'serie': serie.id}) }}">
-                {{ serie.titre }} - {{ serie.saisons | length }} saison(s).
+                <img src="{{ asset('img/series/'~serie.image) }}" alt="{{ serie.titre }}">
             </a>
         </div>
     {% endfor %}

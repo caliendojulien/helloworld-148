@@ -21,6 +21,13 @@ class SerieRepository extends ServiceEntityRepository
         parent::__construct($registry, Serie::class);
     }
 
+    public function findAllTuning(): array {
+        $queryBuilder = $this->createQueryBuilder('s'); // SELECT * FROM serie s
+        $queryBuilder->leftJoin('s.saisons', 'saisons'); // SELECT * FROM serie s LEFT JOIN saison s
+        $queryBuilder->addOrderBy('s.titre', 'ASC'); // SELECT * FROM serie s LEFT JOIN saison s ORDER BY s.numero
+        return $queryBuilder->getQuery()->getResult();
+    }
+
 //    /**
 //     * @return Serie[] Returns an array of Serie objects
 //     */

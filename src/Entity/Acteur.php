@@ -24,6 +24,12 @@ class Acteur
     #[ORM\ManyToMany(targetEntity: Saison::class, inversedBy: 'acteurs')]
     private Collection $saisons;
 
+    public function __toString(): string
+    {
+        return $this->nom . ' ' . $this->prenom;
+    }
+
+
     public function __construct()
     {
         $this->saisons = new ArrayCollection();
